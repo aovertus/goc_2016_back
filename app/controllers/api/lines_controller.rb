@@ -1,7 +1,7 @@
 class Api::LinesController < ApiController
 
   def index
-    @lines = Line.all
+    @lines = Line.all.sort{ |a,b| a.line.to_i <=> b.line.to_i}
   end
 
   def show
